@@ -25,36 +25,50 @@ function playGame() {
     let sillyconeScore = 0;
 
     function playRound(meatsackChoice, sillyconeChoice) {
-        if (meatsackChoice === sillyconeChoice) 
+        if (meatsackChoice === sillyconeChoice) {
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} It's a tie!`)
             return "It's a tie!"
+        }
+
         if (meatsackChoice === "rock" && sillyconeChoice === "paper") {
             sillyconeScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
-            return "You lose! Computer chose Paper, Paper covers Rock!"
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} You lose! Computer chose Paper, Paper covers Rock!`)
+            return "You lose! Computer threw Paper, Paper covers Rock!"
         }
+
         if (meatsackChoice === "paper" && sillyconeChoice === "scissors") {
             sillyconeScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
-            return "You lose! Computer chose Scissors, Scissors cuts Paper!"
+            alert(`You lose! Computer chose Scissors, Scissors cuts Paper!`)
+            return "You lose! Computer threw Scissors, Scissors cuts Paper!"
         }
+
         if (meatsackChoice === "scissors" && sillyconeChoice === "rock") {
             sillyconeScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} You lose! Computer threw Rock, Rock smashes Scissors!`)
             return "You lose! Computer chose Rock, Rock smashes Scissors!"
         }
+
         if (meatsackChoice === "rock" && sillyconeChoice === "scissors") {
             meatsackScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
-            return "You win! Computer chose Scissors, Rock smashes Scissors!"
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} You win! Computer threw scissors, Rock smashes scissors!`)
+            return "You win! Computer threw Scissors, Rock smashes Scissors!"
         }
+
         if (meatsackChoice === "paper" && sillyconeChoice === "rock") {
             meatsackScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} You win! Computer threw Rock, Paper covers Rock`)
             return "You win! Computer chose Rock, Paper covers Rock!"
         }
+
         if (meatsackChoice === "scissors" && sillyconeChoice === "paper") {
             meatsackScore++;
             log(`score after round: You ${meatsackScore} - Computer ${sillyconeScore}`)
+            alert(`You threw: ${meatsackChoice} - Computer threw: ${sillyconeChoice} You win! Computer threw Paper, Scissors cuts Paper!`)
             return "You win! Computer chose paper, Scissors cuts Paper!"
         }
     }
